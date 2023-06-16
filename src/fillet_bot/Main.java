@@ -9,7 +9,9 @@ import java.net.*;
 import java.util.Scanner;
 
 
+
 public class Main {
+	static Robot robot;
 
 	public static void main(String[] args) throws AWTException, InterruptedException {
 		// TODO Auto-generated method stub
@@ -33,7 +35,8 @@ public class Main {
 		System.out.println("Enter the number of laps");
 		laps = sc.nextInt();
 		System.out.println("switch to rdr2");
-		Thread.sleep(2000);
+		robot = new Robot();
+		robot.delay(2000);
 		for (int i = 0;i<laps;i++) {
 			buttonsrobot(button1,delay);
 			buttonsrobot(button2,delay);
@@ -48,18 +51,17 @@ public class Main {
 		}
 	}	
 	private static void buttonsrobot(String input,int delay) throws AWTException {
-		Robot robot = new Robot();
 		
-		if(input.equals("W")) {
+		if(input.equals("w")) {
 			robot.keyPress(KeyEvent.VK_W);
 		}
-		if(input.equals("A")) {
+		if(input.equals("a")) {
 			robot.keyPress(KeyEvent.VK_A);
 		}
-		if(input.equals("S")) {
+		if(input.equals("s")) {
 			robot.keyPress(KeyEvent.VK_S);
 		}
-		if(input.equals("D")) {
+		if(input.equals("d")) {
 			robot.keyPress(KeyEvent.VK_D);
 		}
 		robot.delay(delay);
